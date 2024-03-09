@@ -12,18 +12,18 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=7;
+		nextID=4;
 	};
 	class LayerIndexProvider
 	{
-		nextID=4;
+		nextID=2;
 	};
 	class Camera
 	{
-		pos[]={7765.2822,15.500602,5162.6914};
-		dir[]={0.88549125,-0.33060971,-0.32649717};
-		up[]={0.31019616,0.94376379,-0.11437541};
-		aside[]={-0.34595132,-1.2945384e-07,-0.9382534};
+		pos[]={3848.7952,15,3796.697};
+		dir[]={-0.88408941,-0.43164027,-0.17908408};
+		up[]={-0.42305353,0.90203536,-0.085694879};
+		aside[]={-0.19853143,5.0491508e-08,0.9800967};
 	};
 };
 binarizationWanted=0;
@@ -31,14 +31,13 @@ sourceName="FUBAR";
 addons[]=
 {
 	"A3_Characters_F_AoW",
-	"A3_Modules_F_Curator_Curator",
-	"A3_Structures_F_Civ_Camping"
+	"A3_Modules_F_Curator_Curator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=2;
 		class Item0
 		{
 			className="A3_Characters_F_AoW";
@@ -53,20 +52,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item2
-		{
-			className="A3_Structures_F";
-			name="Arma 3 - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
 };
 dlcs[]=
 {
 	"AoW"
 };
-randomSeed=4592980;
+randomSeed=16634807;
 class ScenarioData
 {
 	author="little andy";
@@ -92,7 +84,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=2;
+		items=1;
 		class Item0
 		{
 			dataType="Layer";
@@ -112,7 +104,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={7788.8838,5.0014391,5146.5762};
+								position[]={3836.9668,5.0014391,3788.7361};
 								angles[]={0,1.5707964,0};
 							};
 							side="West";
@@ -124,7 +116,7 @@ class Mission
 								description="Lt. Andy@HQ-A";
 								isPlayer=1;
 							};
-							id=3;
+							id=1;
 							type="B_Officer_Parade_Veteran_F";
 							class CustomAttributes
 							{
@@ -304,16 +296,16 @@ class Mission
 					class Attributes
 					{
 					};
-					id=2;
+					id=0;
 				};
 				class Item1
 				{
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={7788.8838,5,5147.5264};
+						position[]={3836.9668,5,3789.6863};
 					};
-					id=4;
+					id=2;
 					type="ModuleCurator_F";
 					class CustomAttributes
 					{
@@ -373,24 +365,7 @@ class Mission
 					};
 				};
 			};
-			id=5;
-		};
-		class Item1
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7800.1089,6.3781338,5146.0229};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="sunshade";
-				disableSimulation=1;
-			};
-			id=6;
-			type="Land_Sunshade_F";
+			id=3;
 		};
 	};
 };
