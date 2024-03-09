@@ -1,0 +1,371 @@
+version=54;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	mods[]=
+	{
+		"3denEnhanced"
+	};
+	class ItemIDProvider
+	{
+		nextID=6;
+	};
+	class LayerIndexProvider
+	{
+		nextID=1;
+	};
+	class Camera
+	{
+		pos[]={7768.0444,20.295099,5154.604};
+		dir[]={0.81418926,-0.52717072,-0.24328607};
+		up[]={0.50511926,0.8497141,-0.15093362};
+		aside[]={-0.2863023,-1.3533281e-08,-0.95815092};
+	};
+};
+binarizationWanted=0;
+sourceName="FUBAR";
+addons[]=
+{
+	"A3_Characters_F_AoW",
+	"A3_Modules_F_Curator_Curator"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=2;
+		class Item0
+		{
+			className="A3_Characters_F_AoW";
+			name="Arma 3 Art of War - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+dlcs[]=
+{
+	"AoW"
+};
+randomSeed=4592980;
+class ScenarioData
+{
+	author="little andy";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		day=28;
+		hour=13;
+		minute=37;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=1;
+		class Item0
+		{
+			dataType="Layer";
+			name="(Zeus) HQ-A";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Group";
+					side="West";
+					class Entities
+					{
+						items=1;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={7788.8838,5.0014391,5146.5762};
+								angles[]={0,1.5707964,0};
+							};
+							side="West";
+							flags=7;
+							class Attributes
+							{
+								rank="LIEUTENANT";
+								name="andy1_andy";
+								description="Lt. Andy@HQ-A";
+								isPlayer=1;
+							};
+							id=3;
+							type="B_Officer_Parade_Veteran_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ENH_unitTraits_camouflage";
+									expression="[_this, ['CamouflageCoef', _value]] remoteExec ['setUnitTrait', _this]";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.5;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="ENH_unitTraits_audibleCoef";
+									expression="[_this, ['AudibleCoef', _value]] remoteExec ['setUnitTrait', _this]";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.5;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="ENH_unitTraits_engineer";
+									expression="[_this, ['Engineer', _value]] remoteExec ['setUnitTrait', _this]";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="ENH_unitTrait_UAVHacker";
+									expression="[_this, ['UAVHacker', _value]] remoteExec ['setUnitTrait', _this]";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute4
+								{
+									property="unitInsignia";
+									expression="[_this,_value] call BIS_fnc_setUnitInsignia;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								class Attribute5
+								{
+									property="unitName";
+									expression="_this setname _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Andy";
+										};
+									};
+								};
+								class Attribute6
+								{
+									property="face";
+									expression="_this setface _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="AsianHead_A3_06";
+										};
+									};
+								};
+								class Attribute7
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1.1;
+										};
+									};
+								};
+								class Attribute8
+								{
+									property="ENH_unitTraits_loadCoef";
+									expression="[_this, ['LoadCoef', _value]] remoteExec ['setUnitTrait', _this]";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.1;
+										};
+									};
+								};
+								class Attribute9
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male03ENGB";
+										};
+									};
+								};
+								class Attribute10
+								{
+									property="ENH_unitTrait_explosiveSpecialist";
+									expression="[_this, ['ExplosiveSpecialist', _value]] remoteExec ['setUnitTrait', _this]";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute11
+								{
+									property="ENH_unitTraits_medic";
+									expression="[_this, ['Medic', _value]] remoteExec ['setUnitTrait', _this]";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute12
+								{
+									property="enableStamina";
+									expression="_this enablestamina _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=13;
+							};
+						};
+					};
+					class Attributes
+					{
+					};
+					id=2;
+				};
+				class Item1
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={7788.8838,5,5147.5264};
+					};
+					id=4;
+					type="ModuleCurator_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ModuleCurator_F_Owner";
+							expression="_this setVariable ['Owner',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="andy1_andy";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ModuleCurator_F_Forced";
+							expression="_this setVariable ['Forced',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ModuleCurator_F_Name";
+							expression="_this setVariable ['Name',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ModuleCurator_F_Addons";
+							expression="_this setVariable ['Addons',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=3;
+								};
+							};
+						};
+						nAttributes=4;
+					};
+				};
+			};
+			id=5;
+		};
+	};
+};
