@@ -6,6 +6,7 @@ class CfgFunctions
 		{
             file = "FUBAR";
 			class FUBAR_initMan {};
+            class FUBAR_map_iconUnit {};
 		};
 	};
 };
@@ -23,10 +24,10 @@ class Extended_Init_EventHandlers
 class cfgSounds 
 {
     sounds[] = {};
-    class FUBAR_RadioIn
+    class FUBAR_RadioBeep
     {
-        name = "FUBAR_RadioIn";
-        sound[] = {"FUBAR\FUBAR_RadioBeep.ogg", 1, 1};
+        name = "FUBAR_RadioBeep";
+        sound[] = {"FUBAR\radioBeep.ogg", 0.5, 1};
         titles[] = {};
     };
 };
