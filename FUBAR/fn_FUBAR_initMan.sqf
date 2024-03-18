@@ -2,6 +2,8 @@ params ["_unit"];
 
 if (!isServer) exitWith {};
 
+_unit call ANDY1_fnc_FUBAR_dmgMain;
+
 if (_unit == leader _unit) then {
     _unit setVariable ["ANDY1_FUBAR_isLeader", true];
 

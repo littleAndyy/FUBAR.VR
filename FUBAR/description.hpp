@@ -7,6 +7,9 @@ class CfgFunctions
             file = "FUBAR";
 			class FUBAR_initMan {};
             class FUBAR_map_iconUnit {};
+            class FUBAR_map_projectiles {};
+            class FUBAR_dmgMain {};
+            class FUBAR_dmgHead {};
 		};
 	};
 };
@@ -27,7 +30,7 @@ class cfgSounds
     class FUBAR_RadioBeep
     {
         name = "FUBAR_RadioBeep";
-        sound[] = {"FUBAR\radioBeep.ogg", 0.5, 1};
+        sound[] = {"FUBAR\radioBeep.ogg", 0.25, 1};
         titles[] = {};
     };
 };
