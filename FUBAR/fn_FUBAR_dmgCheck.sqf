@@ -1,4 +1,4 @@
-params ["_unit"];
+params ["_unit", ["_partIndex", -1]];
 
 if (isServer && !hasInterface) exitWith {};
 
@@ -26,6 +26,7 @@ if (isNil {_unit getVariable "ANDY1_FUBAR_bodyPartsHP"}) then {
     10 - right leg
     11 - left foot
     12 - right foot
+    
     */
     _unit setVariable ["ANDY1_FUBAR_bodyPartsHP", [
         [
@@ -49,12 +50,52 @@ if (isNil {_unit getVariable "ANDY1_FUBAR_bodyPartsHP"}) then {
     ], true];
 };
 
+private _bodyPartsHP = _unit getVariable "ANDY1_FUBAR_bodyPartsHP";
+switch (_partIndex) do {
+    case 0: { //HEAD
+        _bodyPartsHP set [_partIndex, ((_bodyPartsHP[_partIndex]) + (random [0.05, 0.9, 1]))];
+    };
+    case 1: { //NECK
+        _bodyPartsHP set [_partIndex, ((_bodyPartsHP[_partIndex]) + (random [0.05, 0.8, 1]))];
+    };
+    case 2: { //CHEST
+        _bodyPartsHP set [_partIndex, ((_bodyPartsHP[_partIndex]) + (random [0.05, 0.2, 1]))];
+    };
+    case 3: { //ABDOMEN
+        _bodyPartsHP set [_partIndex, ((_bodyPartsHP[_partIndex]) + (random [0.05, 0.1, 0.8]))];
+    };
+    case 4: { //PELVIS
+        _bodyPartsHP set [_partIndex, ((_bodyPartsHP[_partIndex]) + (random [0.05, 0.1, 0.8]))];
+    };
+};
+
+// TODO: INSTEAD OF THE BELOW, SORT THE BODYPARTS HP ARRAY INTO A TEMPORARY VARIABLE
+// THE TEMPORARY VARIABLE WILL STORE THE HIGHEST DAMAGED BODY PART.
+// THE HIGHEST DAMAGED BODYPART WILL DETERMINE THE STATUS OF THE PLAYER.
+// MAY CHANGE IN FUTURE TO DETERMINE USING TOTAL DAMAGE / A FORMULA RATHER THAN INDIVIDUAL BODY PARTS 
+// ^ (AS IT IGNORES IF YOU HAVE MULTIPLE WOUNDED BODYPARTS WHICH WOULD RESULT IN DEATH)
+// THEN IT WILL APPLY ADDACTIONS ACCORDINGLY TO TREAT INDIVIDUAL BODYPARTS (IF A MEDKIT IS PRESENT IN INVENTORY)
 {
-    if (_x == 1) exitWith {
+    if (_x >= 0.95) exitWith {
         _unit setVariable ["ANDY1_FUBAR_status", "FUBAR", true];
     };
-    if (_x > 0.5) then {
+    if (_x >= 0.9) exitWith {
         _unit setVariable ["ANDY1_FUBAR_status", "CRITICAL", true];
+    };
+    if (_x >= 0.8) exitWith {
+        _unit setVariable ["ANDY1_FUBAR_status", "SEVERE", true];
+    };
+    if (_x >= 0.6) exitWith {
+        _unit setVariable ["ANDY1_FUBAR_status", "SERIOUS", true];
+    };
+    if (_x >= 0.3) exitWith {
+        _unit setVariable ["ANDY1_FUBAR_status", "MODERATE", true];
+    };
+    if (_x >= 0.1) exitWith {
+        _unit setVariable ["ANDY1_FUBAR_status", "MINOR", true];
+    };
+    if (_x >= 0) then {
+        _unit setVariable ["ANDY1_FUBAR_status", "NORMAL", true];
     };
 } forEach (_unit getVariable "ANDY1_FUBAR_bodyPartsHP");
 
@@ -63,8 +104,9 @@ _ANDY1_fnc_setDamage = {
     switch (_unit getVariable "ANDY1_FUBAR_status") do {
         case "FUBAR": {
             _unit spawn {
-                //i guess that's it for you
-                sleep 3;
+                // i guess that's it for you
+                // TODO: heartbeat sound (die)
+                sleep 7;
                 _this setDamage 1;
             };
         };

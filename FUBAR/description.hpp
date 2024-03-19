@@ -9,7 +9,8 @@ class CfgFunctions
             class FUBAR_map_iconUnit {};
             class FUBAR_map_projectiles {};
             class FUBAR_dmgMain {};
-            class FUBAR_dmgHead {};
+            class FUBAR_dmgPart_head {};
+            class FUBAR_dmgCheck {};
 		};
 	};
 };

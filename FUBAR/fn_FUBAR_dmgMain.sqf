@@ -18,48 +18,39 @@ _this addEventHandler ["HitPart", {
     switch (_selection#0) do {
         case "face_hub":
         {
-            _unit remoteExecCall ["ANDY1_fnc_FUBAR_dmgHead", _unit];
+            _unit remoteExecCall ["ANDY1_fnc_FUBAR_dmgPart_head", _unit];
+            [_unit, 0] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
         };
         case "head":
         {
-            _unit remoteExecCall ["ANDY1_fnc_FUBAR_dmgHead", _unit];
+            _unit remoteExecCall ["ANDY1_fnc_FUBAR_dmgPart_head", _unit];
+            [_unit, 0] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
         };
         case "neck":
         {
-
+            [_unit, 1] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
         };
         case "pelvis":
         {
-
+            [_unit, 1] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
         };
         case "spine1":
         {
-
+            [_unit, 2] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
         };
         case "spine2":
         {
-
+            [_unit, 3] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
         };
         case "spine3":
         {
-
+            [_unit, 3] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
         };
         case "body":
         {
-
+            [_unit, 2] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
         };
-        case "arms":
-        {
-
-        };
-        case "hands":
-        {
-
-        };
-        case "legs":
-        {
-
-        };
+        // TODO: FIND hitPart _selection bodyparts for legs, feet, arms, hands
     };
     systemChat format ["_vecDir: %1", _velocity];
     _vecDir = _velocity;
