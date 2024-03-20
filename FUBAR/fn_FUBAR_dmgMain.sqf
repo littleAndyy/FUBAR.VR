@@ -28,7 +28,7 @@ _this addEventHandler ["HitPart", {
         };
         case "neck":
         {
-            _unit remoteExecCall ["ANDY1_fnc_FUBAR_dmgPart_neck", _unit];
+            _unit remoteExecCall ["ANDY1_fnc_FUBAR_dmgPart_head", _unit];
             [_unit, 1] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
         };
         case "pelvis":
