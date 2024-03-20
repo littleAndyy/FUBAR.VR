@@ -28,6 +28,7 @@ _this addEventHandler ["HitPart", {
         };
         case "neck":
         {
+            _unit remoteExecCall ["ANDY1_fnc_FUBAR_dmgPart_neck", _unit];
             [_unit, 1] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
         };
         case "pelvis":
@@ -49,6 +50,46 @@ _this addEventHandler ["HitPart", {
         case "body":
         {
             [_unit, 2] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
+        };
+        case "leftarm":
+        {
+            [_unit, 5] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
+        };
+        case "leftforearm":
+        {
+            [_unit, 5] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
+        };
+        case "rightarm":
+        {
+            [_unit, 6] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
+        };
+        case "rightforearm":
+        {
+            [_unit, 6] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
+        };
+        case "leftleg":
+        {
+            [_unit, 9] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
+        };
+        case "leftupleg":
+        {
+            [_unit, 9] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
+        };
+        case "rightleg":
+        {
+            [_unit, 10] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
+        };
+        case "rightupleg":
+        {
+            [_unit, 10] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
+        };
+        case "leftfoot":
+        {
+            [_unit, 11] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
+        };
+        case "rightfoot":
+        {
+            [_unit, 12] remoteExecCall ["ANDY1_fnc_FUBAR_dmgCheck", _unit];
         };
         // TODO: FIND hitPart _selection bodyparts for legs, feet, arms, hands
     };
