@@ -54,19 +54,19 @@ if (isNil {_unit getVariable "ANDY1_FUBAR_bodyPartsHP"}) then {
 private _bodyPartsHP = _unit getVariable "ANDY1_FUBAR_bodyPartsHP";
 switch (_partIndex) do {
     case 0: { //HEAD
-        _bodyPartsHP set [_partIndex, ((_bodyPartsHP[_partIndex]) + (random [0.05, 0.6, 1]))];
+        _bodyPartsHP set [_partIndex, ((_bodyPartsHP select _partIndex) + (random [0.05, 0.6, 1]))];
     };
     case 1: { //NECK
-        _bodyPartsHP set [_partIndex, ((_bodyPartsHP[_partIndex]) + (random [0.05, 0.6, 1]))];
+        _bodyPartsHP set [_partIndex, ((_bodyPartsHP select _partIndex) + (random [0.05, 0.6, 1]))];
     };
     case 2: { //CHEST
-        _bodyPartsHP set [_partIndex, ((_bodyPartsHP[_partIndex]) + (random [0.05, 0.2, 1]))];
+        _bodyPartsHP set [_partIndex, ((_bodyPartsHP select _partIndex) + (random [0.05, 0.2, 1]))];
     };
     case 3: { //ABDOMEN
-        _bodyPartsHP set [_partIndex, ((_bodyPartsHP[_partIndex]) + (random [0.05, 0.1, 0.8]))];
+        _bodyPartsHP set [_partIndex, ((_bodyPartsHP select _partIndex) + (random [0.05, 0.1, 0.8]))];
     };
     case 4: { //PELVIS
-        _bodyPartsHP set [_partIndex, ((_bodyPartsHP[_partIndex]) + (random [0.05, 0.1, 0.8]))];
+        _bodyPartsHP set [_partIndex, ((_bodyPartsHP select _partIndex) + (random [0.05, 0.1, 0.8]))];
     };
 };
 _unit setVariable ["ANDY1_FUBAR_bodyPartsHP", _bodyPartsHP, true];
@@ -110,7 +110,7 @@ _ANDY1_fnc_treatment_applyAddAction = {
             _target setVariable ["ANDY1_FUBAR_bodyPartsHP", _bodyPartsHP, true]; //update bodyparts hp array
         },
         {},
-        [_bodyPartIndex],
+        [_index],
         (3+round random 5),
         0,
         true,
@@ -120,7 +120,7 @@ _ANDY1_fnc_treatment_applyAddAction = {
 _ANDY1_fnc_get_bodyPart = {
     params ["_index"];
     private _name = "";
-    switch (_index) {
+    switch (_index) do {
         case 0: {
             _name = "Head";
         };
@@ -160,8 +160,8 @@ _ANDY1_fnc_get_bodyPart = {
         case 12: {
             _name = "Right Foot";
         };
-        _name
     };
+    _name
 };
 
 {
