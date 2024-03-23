@@ -11,6 +11,9 @@ class CfgFunctions
             class FUBAR_dmgMain {};
             class FUBAR_dmgPart_head {};
             class FUBAR_dmgCheck {};
+            class FUBAR_treatment_action {};
+            class FUBAR_getBodyPart {};
+            class FUBAR_chanceUncon {};
 		};
 	};
 };

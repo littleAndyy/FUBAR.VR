@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5;
+		nextID=6;
 	};
 	class Camera
 	{
-		pos[]={3831.634,11.097089,3794.8513};
-		dir[]={0.093697332,-0.47322142,-0.87594664};
-		up[]={0.050331924,0.88094348,-0.47053719};
-		aside[]={-0.99432778,0,-0.1063602};
+		pos[]={3845.083,17.28714,3790.0969};
+		dir[]={-0.68292361,-0.7264688,-0.076545425};
+		up[]={-0.72194755,0.68719131,-0.080919594};
+		aside[]={-0.11138777,1.0510121e-08,0.99377716};
 	};
 };
 binarizationWanted=0;
@@ -66,6 +66,90 @@ randomSeed=16634807;
 class ScenarioData
 {
 	author="little andy";
+};
+class CustomAttributes
+{
+	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="ReviveBleedOutDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="SCALAR";
+					value=300;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="ReviveDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="SCALAR";
+					value=6;
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					singleType="ARRAY";
+					class value
+					{
+						items=1;
+						class Item0
+						{
+							class data
+							{
+								singleType="STRING";
+								value="None";
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute3
+		{
+			property="ReviveMode";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="SCALAR";
+					value=1;
+				};
+			};
+		};
+		class Attribute4
+		{
+			property="ReviveRequiredItems";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="SCALAR";
+					value=2;
+				};
+			};
+		};
+		nAttributes=5;
+	};
 };
 class Mission
 {
